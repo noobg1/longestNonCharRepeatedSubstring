@@ -5,7 +5,6 @@ const getLongestNonRepeatingSubstring = (text) => {
   let currSubstringMap = {}
   let substringList = []
   while (leftNeedle < text.length && rightNeedle < text.length) {
-    console.log(text[rightNeedle], !Boolean(currSubstringMap[text[rightNeedle]]) || currSubstringMap[text[rightNeedle]] < 1, currSubstringMap);
     if (!Boolean(currSubstringMap[text[rightNeedle]]) || currSubstringMap[text[rightNeedle]] < 1) {
       currSubstring = currSubstring + text[rightNeedle]
       currSubstringMap[text[rightNeedle]] = 1
@@ -27,7 +26,6 @@ const getLongestNonRepeatingSubstring = (text) => {
       maxLengthIndex = index
     }
   })
-  console.log(substringList);
   return substringList[maxLengthIndex];
 }
 
